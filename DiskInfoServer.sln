@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfo", "..\lib\DiskInfo\DiskInfo.oxygene", "{EA8BA804-FCE9-4C91-ADB7-71F8E2DD4D9D}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "TestDiskInfoConsole", "..\lib\DiskInfo\TestDiskInfoConsole\TestDiskInfoConsole.oxygene", "{DE63202A-825E-4E02-AC62-DFB7168AAD56}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoWindowsForms", "DiskInfoWindowsForms\Server\DiskInfoWindowsForms.oxygene", "{E2B05BEC-4C42-4309-8B02-3748D477AC35}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA8BA804-FCE9-4C91-ADB7-71F8E2DD4D9D}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{EA8BA804-FCE9-4C91-ADB7-71F8E2DD4D9D}.Debug|Mixed Platforms.Build.0 = Debug
+		{EA8BA804-FCE9-4C91-ADB7-71F8E2DD4D9D}.Release|Mixed Platforms.ActiveCfg = Release
+		{EA8BA804-FCE9-4C91-ADB7-71F8E2DD4D9D}.Release|Mixed Platforms.Build.0 = Release
+		{DE63202A-825E-4E02-AC62-DFB7168AAD56}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{DE63202A-825E-4E02-AC62-DFB7168AAD56}.Debug|Mixed Platforms.Build.0 = Debug
+		{DE63202A-825E-4E02-AC62-DFB7168AAD56}.Release|Mixed Platforms.ActiveCfg = Release
+		{DE63202A-825E-4E02-AC62-DFB7168AAD56}.Release|Mixed Platforms.Build.0 = Release
+		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Debug|Mixed Platforms.Build.0 = Debug
+		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Release|Mixed Platforms.ActiveCfg = Release
+		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Release|Mixed Platforms.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
