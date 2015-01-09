@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Library Name="DiskInfoServiceLib" UID="{80003AE1-AE24-4BDC-81E7-E672445ED9C5}" Version="3.0">
+<Services>
+<Service Name="DiskInfoService" UID="{9FE7B4FB-51C9-44DF-A27C-24D9820F5735}">
+<Interfaces>
+<Interface Name="Default" UID="{B517C6B5-B6CD-40B5-93B1-AD773ADAFE5E}">
+<Documentation><![CDATA[Service DiskInfoService. This service has been automatically generated using the RODL template you can find in the Templates directory.]]></Documentation>
+<Operations>
+<Operation Name="GetServerTime" UID="{006AF3F6-3288-4BEE-9B45-192221C77EC6}">
+<Parameters>
+<Parameter Name="Result" DataType="DateTime" Flag="Result">
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="CurrentDiskName" UID="{C4382CF0-354D-4BFB-BB12-6DD90F40362F}">
+<Parameters>
+<Parameter Name="Result" DataType="AnsiString" Flag="Result">
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="VolumeName" UID="{14F33D35-1AE1-4A16-B2C5-4C9CDC9E1E42}">
+<Parameters>
+<Parameter Name="Result" DataType="AnsiString" Flag="Result">
+</Parameter>
+<Parameter Name="DiskName" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="DiskType" UID="{E9C272BB-0E45-4F39-8AE8-0D1A1C4A31B4}">
+<Parameters>
+<Parameter Name="Result" DataType="AnsiString" Flag="Result">
+</Parameter>
+<Parameter Name="DiskName" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="TotalDiskSize" UID="{AC12D319-3725-4508-AAC2-7D0986CAF4D4}">
+<Parameters>
+<Parameter Name="Result" DataType="Int64" Flag="Result">
+</Parameter>
+<Parameter Name="DiskName" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+<Operation Name="TotalDiskFree" UID="{B096ACA5-CA49-4F30-9AC0-05716A184909}">
+<Parameters>
+<Parameter Name="Result" DataType="Int64" Flag="Result">
+</Parameter>
+<Parameter Name="DiskName" DataType="AnsiString" Flag="In" >
+</Parameter>
+</Parameters>
+</Operation>
+</Operations>
+</Interface>
+</Interfaces>
+</Service>
+</Services>
+<Structs>
+</Structs>
+<Enums>
+</Enums>
+<Arrays>
+</Arrays>
+</Library>
