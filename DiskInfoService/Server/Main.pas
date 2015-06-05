@@ -18,6 +18,7 @@ type
     
     components: System.ComponentModel.IContainer;
     soapMessage: RemObjects.SDK.SoapMessage;
+    eventLog1: System.Diagnostics.EventLog;
     method InitializeComponent;
   {$ENDREGION}
   protected
@@ -38,6 +39,9 @@ implementation
 
 {$REGION Construction and Disposition}
 constructor MainService;
+const 
+  DiskInfoSource = 'DiskInfoService';
+  DiskInfoLog = 'DiskInfoLog';
 begin
   //
   // Required for Service Designer support
@@ -47,6 +51,12 @@ begin
   //
   // TODO: Add any constructor code after InitializeComponent call
   //
+  eventLog1 := new System.Diagnostics.EventLog();
+  if not System.Diagnostics.EventLog.SourceExists(DiskInfoSource) then 
+    System.Diagnostics.EventLog.CreateEventSource(DiskInfoSource, DiskInfoLog);
+  
+  eventLog1.Source := DiskInfoSource;
+  eventLog1.Log := DiskInfoLog;
 end;
 
 method MainService.Dispose(aDisposing: boolean);
@@ -70,7 +80,9 @@ begin
   self.binMessage := new RemObjects.SDK.BinMessage();
   self.serverChannel := new RemObjects.SDK.Server.IpHttpServerChannel(self.components);
   self.soapMessage := new RemObjects.SDK.SoapMessage();
+  self.eventLog1 := new System.Diagnostics.EventLog();
   (self.serverChannel as System.ComponentModel.ISupportInitialize).BeginInit();
+  (self.eventLog1 as System.ComponentModel.ISupportInitialize).BeginInit();
   //  binMessage
   self.binMessage.ContentType := 'application/octet-stream';
   self.binMessage.SerializerInstance := nil;
@@ -90,6 +102,7 @@ begin
   //  MainService
   self.ServiceName := 'MainService';
   (self.serverChannel as System.ComponentModel.ISupportInitialize).EndInit();
+  (self.eventLog1 as System.ComponentModel.ISupportInitialize).EndInit();
 end;
 {$ENDREGION}
 
@@ -99,6 +112,7 @@ begin
   inherited;
 
   //TODO: add service start code here
+  eventLog1.WriteEntry("Started");
 end;
 
 procedure MainService.OnPause;
@@ -106,6 +120,7 @@ begin
   inherited;
 
   //TODO: add service pause code here
+  eventLog1.WriteEntry("Paused");
 end;
 
 procedure MainService.OnStop;
@@ -113,6 +128,7 @@ begin
   inherited;
 
   //TODO: add service stop code here
+  eventLog1.WriteEntry("Stopped");
 end;
 
 procedure MainService.OnContinue;
@@ -120,6 +136,7 @@ begin
   inherited;
 
   //TODO: add service continue code here
+  eventLog1.WriteEntry("Continuing");
 end;
 
 procedure MainService.OnShutdown;
@@ -127,6 +144,7 @@ begin
   inherited;
 
   //TODO: add service shutdown code here
+  eventLog1.WriteEntry("Shutting Down");
 end;
 {$ENDREGION}
 
