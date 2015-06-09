@@ -55,12 +55,12 @@
     </Reference>
     <Reference Include="RemObjects.SDK.ZeroConf">
       <HintPath>C:\Program Files (x86)\RemObjects Software\RemObjects SDK for .NET\Bin\RemObjects.SDK.ZeroConf.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="RemObjects.SDK.ZLib">
       <HintPath>C:\Program Files (x86)\RemObjects Software\RemObjects SDK for .NET\Bin\RemObjects.SDK.ZLib.dll</HintPath>
       <Name>RemObjects.SDK.ZLib.dll</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="RemObjects.InternetPack">
       <HintPath>C:\Program Files (x86)\RemObjects Software\RemObjects SDK for .NET\Bin\RemObjects.InternetPack.dll</HintPath>

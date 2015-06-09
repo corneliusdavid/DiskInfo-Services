@@ -13,8 +13,6 @@ Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoService", "DiskInfo
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoClientWPF", "DiskInfoClientWPF\DiskInfoClientWPF.oxygene", "{84CA72F8-A475-41E1-8F29-3C8956F2CF95}"
 EndProject
-Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ChatClient", "C:\Users\Public\Documents\RemObjects Samples\RemObjects SDK for .NET\Oxygene\Chat\Client\ChatClient.oxygene", "{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -41,10 +39,6 @@ Global
 		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Debug|Mixed Platforms.Build.0 = Debug
 		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Release|Mixed Platforms.ActiveCfg = Release
 		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Release|Mixed Platforms.Build.0 = Release
-		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Debug|Mixed Platforms.Build.0 = Debug
-		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Release|Mixed Platforms.ActiveCfg = Release
-		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Release|Mixed Platforms.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
