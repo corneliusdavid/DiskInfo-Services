@@ -34,7 +34,7 @@ constructor DiskInfoClientForm;
 begin
   InitializeComponent();
 
-  DiskInfoServices := CoDiskInfoService.Create('http://localhost:8099/bin');
+  DiskInfoServices := CoDiskInfoService.Create('http://173.248.153.144:8099/bin');
 end;
 
 method DiskInfoClientForm.btnGetTime_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
@@ -67,16 +67,22 @@ end;
 
 method DiskInfoClientForm.btnDiskSize_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
 begin
-  var z := DiskInfoServices.TotalDiskSize(DiskInfoServices.CurrentDiskName);
+  var zb := DiskInfoServices.TotalDiskSize(DiskInfoServices.CurrentDiskName);
+  var zk := zb / 1024;
+  var zm := zk / 1024;
+  var zg := zm / 1024;
 
-  lblDiskInfo.Content := 'Server Disk Size: ' + z.ToString;
+  lblDiskInfo.Content := 'Server Disk Size: ' + zm.ToString('N0') + ' MB (' + zg.ToString('N0') + ' GB)';
 end;
 
 method DiskInfoClientForm.btnDiskFree_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
 begin
-  var f := DiskInfoServices.TotalDiskFree(DiskInfoServices.CurrentDiskName);
+  var fb := DiskInfoServices.TotalDiskFree(DiskInfoServices.CurrentDiskName);
+  var fk := fb / 1024;
+  var fm := fk / 1024;
+  var fg := fm / 1024;
 
-  lblDiskInfo.Content := 'Server Disk Free: ' + f.ToString;
+  lblDiskInfo.Content := 'Server Disk Free: ' + fk.ToString('N0') + ' MB (' + fg.ToString('N0') + ' GB)';
 end;
   
 end.
