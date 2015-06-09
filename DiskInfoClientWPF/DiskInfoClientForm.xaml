@@ -1,0 +1,14 @@
+
+<Window x:Class="DiskInfoClientWPF.DiskInfoClientForm" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="DiskInfo Service Client Test" Height="318" Width="394">
+  <Grid>
+    <Button x:Name="btnGetTime" Content="Get Server Time" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,16,0,0" Click="btnGetTime_Click"/>
+    <Button x:Name="btnDiskName" Content="Get Current Disk Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,41,0,0" Click="btnDiskName_Click"/>
+    <Button x:Name="btnVolName" Content="Get Volume Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,66,0,0" Click="btnVolName_Click"/>
+    <Button x:Name="btnDiskType" Content="Get Disk Type" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,91,0,0" Click="btnDiskType_Click"/>
+    <Label x:Name="lblDiskInfo" Content="" HorizontalAlignment="Left" Margin="60,212,0,0" VerticalAlignment="Top" Height="42" Width="272" BorderBrush="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" BorderThickness="1"/>
+    <Button x:Name="btnDiskSize" Content="Get Disk Size" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,116,0,0" Click="btnDiskSize_Click"/>
+    <Button x:Name="btnDiskFree" Content="Get Disk Free Space" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,141,0,0" Click="btnDiskFree_Click"/>
+    <Label Content="Result:" HorizontalAlignment="Left" Margin="60,186,0,0" VerticalAlignment="Top"/>
+
+  </Grid>
+</Window>

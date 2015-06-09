@@ -11,7 +11,9 @@ Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoWindowsForms", "Dis
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoService", "DiskInfoService\Server\DiskInfoService.oxygene", "{F862BD76-0760-408F-9F8C-20B3B31659DF}"
 EndProject
-Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "WindowsService1", "V:\DiskInfoServices\WindowsService1\WindowsService1.oxygene", "{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}"
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoClientWPF", "DiskInfoClientWPF\DiskInfoClientWPF.oxygene", "{84CA72F8-A475-41E1-8F29-3C8956F2CF95}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ChatClient", "C:\Users\Public\Documents\RemObjects Samples\RemObjects SDK for .NET\Oxygene\Chat\Client\ChatClient.oxygene", "{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,14 @@ Global
 		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Debug|Mixed Platforms.Build.0 = Debug
 		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Release|Mixed Platforms.ActiveCfg = Release
 		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Release|Mixed Platforms.Build.0 = Release
-		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Debug|Mixed Platforms.Build.0 = Debug
-		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Release|Mixed Platforms.ActiveCfg = Release
-		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Release|Mixed Platforms.Build.0 = Release
+		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Debug|Mixed Platforms.Build.0 = Debug
+		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Release|Mixed Platforms.ActiveCfg = Release
+		{84CA72F8-A475-41E1-8F29-3C8956F2CF95}.Release|Mixed Platforms.Build.0 = Release
+		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Debug|Mixed Platforms.Build.0 = Debug
+		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Release|Mixed Platforms.ActiveCfg = Release
+		{814DC3EC-C8BC-4833-A8F8-C63A0B811E5A}.Release|Mixed Platforms.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
