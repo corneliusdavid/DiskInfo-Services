@@ -8,7 +8,7 @@ uses
   RemObjects.SDK.Server;
 
 type
-  MainService = assembly class(System.ServiceProcess.ServiceBase)
+  DiskInfoServiceClass = assembly class(System.ServiceProcess.ServiceBase)
   {$REGION Service Designer generated fields}
   private
   {$region designer-generated code}
@@ -18,7 +18,8 @@ type
     
     components: System.ComponentModel.IContainer;
     soapMessage: RemObjects.SDK.SoapMessage;
-    eventLog1: System.Diagnostics.EventLog;
+    eventLog: System.Diagnostics.EventLog;
+    
     method InitializeComponent;
   {$ENDREGION}
   protected
@@ -31,6 +32,10 @@ type
     procedure OnShutdown; override;
     {$ENDREGION}
   public
+    const 
+      sDiskInfoServiceName = 'DiskInfo';
+      sDiskInfoServiceDisplayName = 'DiskInfo Services';
+      sDiskInfoServiceDescription = 'DiskInfo is a small collection of simple web services to remotely retrieve information about the disks on the server.';
     constructor;
     class method Main;
   end;
@@ -38,10 +43,7 @@ type
 implementation
 
 {$REGION Construction and Disposition}
-constructor MainService;
-const 
-  DiskInfoSource = 'DiskInfoService';
-  DiskInfoLog = 'DiskInfoLog';
+constructor DiskInfoServiceClass;
 begin
   //
   // Required for Service Designer support
@@ -51,15 +53,10 @@ begin
   //
   // TODO: Add any constructor code after InitializeComponent call
   //
-  eventLog1 := new System.Diagnostics.EventLog();
-  if not System.Diagnostics.EventLog.SourceExists(DiskInfoSource) then 
-    System.Diagnostics.EventLog.CreateEventSource(DiskInfoSource, DiskInfoLog);
-  
-  eventLog1.Source := DiskInfoSource;
-  eventLog1.Log := DiskInfoLog;
+  AutoLog := true;
 end;
 
-method MainService.Dispose(aDisposing: boolean);
+method DiskInfoServiceClass.Dispose(aDisposing: boolean);
 begin
   if aDisposing then begin
     if assigned(components) then
@@ -74,15 +71,15 @@ end;
 {$ENDREGION}
 
 {$REGION Service Designer generated code}
-method MainService.InitializeComponent;
+method DiskInfoServiceClass.InitializeComponent;
 begin
   self.components := new System.ComponentModel.Container();
   self.binMessage := new RemObjects.SDK.BinMessage();
   self.serverChannel := new RemObjects.SDK.Server.IpHttpServerChannel(self.components);
   self.soapMessage := new RemObjects.SDK.SoapMessage();
-  self.eventLog1 := new System.Diagnostics.EventLog();
+  self.eventLog := new System.Diagnostics.EventLog();
   (self.serverChannel as System.ComponentModel.ISupportInitialize).BeginInit();
-  (self.eventLog1 as System.ComponentModel.ISupportInitialize).BeginInit();
+  (self.eventLog as System.ComponentModel.ISupportInitialize).BeginInit();
   //  binMessage
   self.binMessage.ContentType := 'application/octet-stream';
   self.binMessage.SerializerInstance := nil;
@@ -99,59 +96,57 @@ begin
   self.soapMessage.LibraryName := '';
   self.soapMessage.SerializationOptions := (((RemObjects.SDK.SoapSerializationOptions.SendUntyped or RemObjects.SDK.SoapSerializationOptions.StrictStructureFieldOrder) or RemObjects.SDK.SoapSerializationOptions.Document) or RemObjects.SDK.SoapSerializationOptions.SplitServiceWsdls) as RemObjects.SDK.SoapSerializationOptions;
   self.soapMessage.SerializerInstance := nil;
-  //  MainService
-  self.ServiceName := 'MainService';
+  //  eventLog
+  self.eventLog.Log := 'Application';
+  self.eventLog.Source := 'DiskInfo';
+  //  DiskInfoServiceClass
+  self.ServiceName := 'DiskInfo';
   (self.serverChannel as System.ComponentModel.ISupportInitialize).EndInit();
-  (self.eventLog1 as System.ComponentModel.ISupportInitialize).EndInit();
+  (self.eventLog as System.ComponentModel.ISupportInitialize).EndInit();
 end;
 {$ENDREGION}
 
 {$REGION Service Control Methods}
-procedure MainService.OnStart(args: array of string);
+procedure DiskInfoServiceClass.OnStart(args: array of string);
 begin
   inherited;
 
-  //TODO: add service start code here
-  eventLog1.WriteEntry("Started");
+  //TODO: add service start code here  
 end;
 
-procedure MainService.OnPause;
+procedure DiskInfoServiceClass.OnPause;
 begin
   inherited;
 
-  //TODO: add service pause code here
-  eventLog1.WriteEntry("Paused");
+  //TODO: add service pause code here  
 end;
 
-procedure MainService.OnStop;
+procedure DiskInfoServiceClass.OnStop;
 begin
   inherited;
 
-  //TODO: add service stop code here
-  eventLog1.WriteEntry("Stopped");
+  //TODO: add service stop code here  
 end;
 
-procedure MainService.OnContinue;
+procedure DiskInfoServiceClass.OnContinue;
 begin
   inherited;
 
-  //TODO: add service continue code here
-  eventLog1.WriteEntry("Continuing");
+  //TODO: add service continue code here  
 end;
 
-procedure MainService.OnShutdown;
+procedure DiskInfoServiceClass.OnShutdown;
 begin
   inherited;
 
-  //TODO: add service shutdown code here
-  eventLog1.WriteEntry("Shutting Down");
+  //TODO: add service shutdown code here  
 end;
 {$ENDREGION}
 
 {$REGION Application Entry Point}
-class method MainService.Main;
+class method DiskInfoServiceClass.Main;
 begin
-  System.ServiceProcess.ServiceBase.Run(new MainService);
+  System.ServiceProcess.ServiceBase.Run(new DiskInfoServiceClass);
 end;
 {$ENDREGION}
 

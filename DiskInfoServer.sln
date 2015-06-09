@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfo", "..\lib\DiskInfo\DiskInfo.oxygene", "{EA8BA804-FCE9-4C91-ADB7-71F8E2DD4D9D}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "TestDiskInfoConsole", "..\lib\DiskInfo\TestDiskInfoConsole\TestDiskInfoConsole.oxygene", "{DE63202A-825E-4E02-AC62-DFB7168AAD56}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoWindowsForms", "DiskInfoWindowsForms\Server\DiskInfoWindowsForms.oxygene", "{E2B05BEC-4C42-4309-8B02-3748D477AC35}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DiskInfoService", "DiskInfoService\Server\DiskInfoService.oxygene", "{F862BD76-0760-408F-9F8C-20B3B31659DF}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "WindowsService1", "V:\DiskInfoServices\WindowsService1\WindowsService1.oxygene", "{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Debug|Mixed Platforms.Build.0 = Debug
 		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Release|Mixed Platforms.ActiveCfg = Release
 		{E2B05BEC-4C42-4309-8B02-3748D477AC35}.Release|Mixed Platforms.Build.0 = Release
+		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Debug|Mixed Platforms.Build.0 = Debug
+		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Release|Mixed Platforms.ActiveCfg = Release
+		{F862BD76-0760-408F-9F8C-20B3B31659DF}.Release|Mixed Platforms.Build.0 = Release
+		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Debug|Mixed Platforms.Build.0 = Debug
+		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Release|Mixed Platforms.ActiveCfg = Release
+		{83ED6231-DB7B-4A57-BBCA-B1C9D38D3B69}.Release|Mixed Platforms.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

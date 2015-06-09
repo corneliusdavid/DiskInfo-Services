@@ -94,26 +94,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiskInfoServiceLib_Intf.pas">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DiskInfoServiceLib_Invk.pas">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="DiskInfoServiceLib_Intf.pas" />
+    <Compile Include="DiskInfoServiceLib_Invk.pas" />
     <Compile Include="DiskInfoService_Impl.pas">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
+      <DesignableClassName>DiskInfoService.DiskInfoService</DesignableClassName>
     </Compile>
-    <Compile Include="Main.pas">
-      <Subtype>Component</Subtype>
-      <DesignableClassName>DiskInfoService.MainService</DesignableClassName>
+    <Compile Include="DiskInfoServiceClass.pas">
+      <DesignableClassName>DiskInfoService.DiskInfoServiceClass</DesignableClassName>
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Main.resx" />
+    <EmbeddedResource Include="DiskInfoServiceClass.resx">
+      <DependentUpon>DiskInfoServiceClass.pas</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="ProjectInstaller.pas">
       <SubType>Component</SubType>
+      <DesignableClassName>DiskInfoService.ProjectInstaller</DesignableClassName>
     </Compile>
     <Compile Include="ProjectInstaller.Designer.pas">
       <SubType>Component</SubType>
+      <DesignableClassName>DiskInfoService.ProjectInstaller</DesignableClassName>
     </Compile>
     <EmbeddedResource Include="ProjectInstaller.resx" />
     <Compile Include="Properties\AssemblyInfo.pas" />

@@ -48,9 +48,11 @@ begin
   self.serviceProcessInstaller.Username := nil;
   self.serviceProcessInstaller.AfterInstall += new System.Configuration.Install.InstallEventHandler(@self.serviceProcessInstaller_AfterInstall);
   //  serviceInstaller
-  self.serviceInstaller.Description := 'DiskInfo a small collection of simple web services to remotely retrieve information about the disks on the server.';
-  self.serviceInstaller.DisplayName := 'DiskInfo Services';
-  self.serviceInstaller.ServiceName := 'DiskInfoService';
+  self.serviceInstaller.DelayedAutoStart := true;
+  self.serviceInstaller.Description := DiskInfoServiceClass.sDiskInfoServiceDescription;
+  self.serviceInstaller.DisplayName := DiskInfoServiceClass.sDiskInfoServiceDisplayName;
+  self.serviceInstaller.ServiceName := DiskInfoServiceClass.sDiskInfoServiceName;
+  self.serviceInstaller.StartType := System.ServiceProcess.ServiceStartMode.Automatic;
   //  ProjectInstaller
   self.Installers.AddRange(array of System.Configuration.Install.Installer([self.serviceProcessInstaller, self.serviceInstaller]));
 end;
