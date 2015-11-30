@@ -23,6 +23,7 @@ type
     method btnVolName_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
     method btnDiskName_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
     method btnGetTime_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
+    method InitializeDiskInfoServices;
     DiskInfoServices: IDiskInfoService;
   public
     constructor;
@@ -34,11 +35,14 @@ constructor DiskInfoClientForm;
 begin
   InitializeComponent();
 
-  DiskInfoServices := CoDiskInfoService.Create('http://173.248.153.144:8099/bin');
+  DiskInfoServices := nil;
 end;
 
 method DiskInfoClientForm.btnGetTime_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
 begin
+  if DiskInfoServices = nil then
+     InitializeDiskInfoServices;
+
   var dt := DiskInfoServices.GetServerTime;
 
   lblDiskInfo.Content := 'Server time: ' + dt.ToString;
@@ -46,6 +50,9 @@ end;
 
 method DiskInfoClientForm.btnDiskName_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
 begin
+  if DiskInfoServices = nil then
+     InitializeDiskInfoServices;
+
   var s := DiskInfoServices.CurrentDiskName;
 
   lblDiskInfo.Content := 'Server Disk Name: ' + s;
@@ -60,6 +67,9 @@ end;
 
 method DiskInfoClientForm.btnDiskType_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
 begin
+  if DiskInfoServices = nil then
+     InitializeDiskInfoServices;
+
   var s := DiskInfoServices.DiskType(DiskInfoServices.CurrentDiskName);
 
   lblDiskInfo.Content := 'Server Disk Type: ' + s;
@@ -77,12 +87,20 @@ end;
 
 method DiskInfoClientForm.btnDiskFree_Click(sender: System.Object; e: System.Windows.RoutedEventArgs);
 begin
+  if DiskInfoServices = nil then
+     InitializeDiskInfoServices;
+
   var fb := DiskInfoServices.TotalDiskFree(DiskInfoServices.CurrentDiskName);
   var fk := fb / 1024;
   var fm := fk / 1024;
   var fg := fm / 1024;
 
   lblDiskInfo.Content := 'Server Disk Free: ' + fk.ToString('N0') + ' MB (' + fg.ToString('N0') + ' GB)';
+end;
+
+method DiskInfoClientForm.InitializeDiskInfoServices;
+begin
+  DiskInfoServices := CoDiskInfoService.Create(edtServiceURL.Text);
 end;
   
 end.

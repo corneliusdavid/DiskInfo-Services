@@ -1,17 +1,19 @@
-<Window x:Class="DiskInfoClientWPF.DiskInfoClientForm" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="DiskInfo Service Client Test" Height="250" Width="383" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+<Window x:Class="DiskInfoClientWPF.DiskInfoClientForm" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="DiskInfo Service Client Test" Height="296" Width="383" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="113*"/>
       <ColumnDefinition Width="80*"/>
     </Grid.ColumnDefinitions>
-    <Button x:Name="btnGetTime" Content="Get Server Time" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,16,0,0" Click="btnGetTime_Click" Height="20"/>
-    <Button x:Name="btnDiskName" Content="Get Current Disk Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,41,0,0" Click="btnDiskName_Click" Height="20"/>
-    <Button x:Name="btnVolName" Content="Get Volume Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="21,66,0,0" Click="btnVolName_Click" Height="20"/>
-    <Button x:Name="btnDiskType" Content="Get Disk Type" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="195,16,0,0" Click="btnDiskType_Click" Grid.ColumnSpan="2" Height="20"/>
-    <Label x:Name="lblDiskInfo" Content="" HorizontalAlignment="Left" Margin="54,126,0,0" VerticalAlignment="Top" Height="67" Width="272" BorderBrush="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" BorderThickness="1" Grid.ColumnSpan="2"/>
-    <Button x:Name="btnDiskSize" Content="Get Disk Size" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="195,41,0,0" Click="btnDiskSize_Click" Grid.ColumnSpan="2" Height="20"/>
-    <Button x:Name="btnDiskFree" Content="Get Disk Free Space" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="195,66,0,0" Click="btnDiskFree_Click" Grid.ColumnSpan="2" Height="20"/>
-    <Label Content="Result:" HorizontalAlignment="Left" Margin="54,100,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
+    <Button x:Name="btnGetTime" Content="Get Server Time" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="24,67,0,0" Click="btnGetTime_Click" Height="20"/>
+    <Button x:Name="btnDiskName" Content="Get Current Disk Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="24,92,0,0" Click="btnDiskName_Click" Height="20"/>
+    <Button x:Name="btnVolName" Content="Get Volume Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="24,117,0,0" Click="btnVolName_Click" Height="20"/>
+    <Button x:Name="btnDiskType" Content="Get Disk Type" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="198,67,0,0" Click="btnDiskType_Click" Grid.ColumnSpan="2" Height="20"/>
+    <Label x:Name="lblDiskInfo" Content="" HorizontalAlignment="Left" Margin="57,177,0,0" VerticalAlignment="Top" Height="67" Width="272" BorderBrush="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" BorderThickness="1" Grid.ColumnSpan="2"/>
+    <Button x:Name="btnDiskSize" Content="Get Disk Size" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="198,92,0,0" Click="btnDiskSize_Click" Grid.ColumnSpan="2" Height="20"/>
+    <Button x:Name="btnDiskFree" Content="Get Disk Free Space" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="198,117,0,0" Click="btnDiskFree_Click" Grid.ColumnSpan="2" Height="20"/>
+    <Label Content="Result:" HorizontalAlignment="Left" Margin="57,151,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
+    <Label Content="Service URL:" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top"/>
+    <TextBox x:Name="edtServiceURL" HorizontalAlignment="Left" Height="23" Margin="103,13,0,0" TextWrapping="Wrap" Text="http://173.248.153.144:8099/bin" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
 
   </Grid>
 </Window>
