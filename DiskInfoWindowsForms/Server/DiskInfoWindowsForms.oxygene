@@ -70,20 +70,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiskInfoWindowsFormsLibrary_Intf.pas">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DiskInfoWindowsFormsLibrary_Invk.pas">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="DiskInfoWindowsFormsLibrary_Intf.pas" />
+    <Compile Include="DiskInfoWindowsFormsLibrary_Invk.pas" />
     <Compile Include="DiskInfoWindowsFormsService_Impl.pas">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
+      <DesignableClassName>DiskInfoWindowsForms.DiskInfoWindowsFormsService</DesignableClassName>
     </Compile>
     <Compile Include="Main.pas">
       <Subtype>Form</Subtype>
       <DesignableClassName>DiskInfoWindowsForms.MainForm</DesignableClassName>
     </Compile>
-    <Compile Include="Main.Designer.pas" />
+    <Compile Include="Main.Designer.pas">
+      <SubType>Form</SubType>
+      <DesignableClassName>DiskInfoWindowsForms.MainForm</DesignableClassName>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Main.resx" />
     <Compile Include="Program.pas" />
@@ -105,6 +105,9 @@
       <HintPath>..\..\..\lib\DiskInfo\bin\Debug\DiskInfo.dll</HintPath>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Oxygene\RemObjects.Oxygene.Echoes.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\RemObjects SDK\RemObjects.SDK.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
 </Project>
